@@ -66,4 +66,49 @@ a = "%0.4f" % 3.42134234
 print (a)
 ## Result : 3.4213 / %간격.소수점 남기는 자리 수f 를 이용해 소수점을 제한 할 수 있다.
 
+# 2.10 문자열 개수 세기 (count)
+
+a = "hobby"
+
+print (a.count('b'))
+## Result : 2 / a 변수에서 b 가 몇 개 있는지 카운트 하여준다.
+
+print (a.find('b'))
+## Result : 2 / 가장 먼저 나오는 b의 인덱스를 찾아 리턴 하여준다.
+
+print (a.find('x'))
+## Result : -1 / 찾는 값이 존재 하지 않을 경우 -1 을 리턴한다.
+
+# 2.11 문자열 삽입(join)
+
+a = ",".join("abcd")
+
+print (a)
+## Result : a,b,c,d / abcd에 ,라는 문자열을 삽입 한다.
+
+# 대,소문자를 각각 변환하기, 양쪽 공백 지우기(upper,lower,strip)
+
+a = "hi"
+a = "HI"
+print (a.upper())
+print (a.lower())
+
+## Result : HI / upper 를 이용하여 소문자를 대문자로 변경.
+## Result : hi / lower 를 이용하여 대문자를 소문자로 변경.
+
+a = "   HI  "
+
+print (a.strip())
+## Result : HI / strip 를 이용하여 공백을 삭제 시킴.
+
+# 2.12 문자열 바꾸기,나누기(replace,split)
+
+a = "Life is too short"
+
+print (a.replace("Life", "Your leg"))
+## Result : Your leg is too short / replace 함수를 이용하여 Life를 Your leg으로 교체한다.
+
+print (a.split())
+## Result : ['Life', 'is', 'too', 'short'] / 문자열 자료형을 띄어쓰기 기준으로 자르는 함수.
+
 
