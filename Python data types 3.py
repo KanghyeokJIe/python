@@ -1,10 +1,10 @@
 ## 3. 리스트 자료형 표현방법
 from typing import List
 
-a = ["이시영","문재성","int","김정현"]
+a = ["apple","banana","cherry","durian"]
 
 print (a)
-## Result : ['이시영', '문재성', 'int', '김정현'] / 하나의 변수에 여러 개의 값을 관리할 때 사용함.
+## Result : ["apple","banana","cherry","durian"] / 하나의 변수에 여러 개의 값을 관리할 때 사용함.
 
 ## 3.1 리스트의 인덱싱
 
