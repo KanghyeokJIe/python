@@ -123,7 +123,7 @@ print(a)
 add = lambda c ,d: c+d
 
 print(add(3,4))
-## Result : 7 / lambda 함수를 이용하여 함수를 간단하게 만들 수 있다. 
+## Result : 7 / lambda 함수를 이용하여 함수를 간단하게 만들 수 있다.
 
 myList = [lambda c,d:c+d, lambda c,d:c*d]
 
