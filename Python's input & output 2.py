@@ -51,5 +51,58 @@ line = f.readline()
 
 print(line)
 f.close()
+## Result : 1번째 줄입니다.
+
+f = open("새파일.txt", 'r',encoding="UTF-8")
+
+while True:
+    line = f.readline()
+    if not line: break
+    print(line)
+f.close()
+## Result : 1번째 줄입니다.
+##
+##          2번째 줄입니다.
+##          ...
+##          10번째 줄입니다.
+
+# 3.3 readlines() 함수 이용하기
+
+f = open("새파일.txt", 'r',encoding="UTF-8")
+
+lines = f.readlines()
+for line in lines:
+    print(line)
+f.close()
+## Result : 1번째 줄입니다.
+##
+##          2번째 줄입니다.
+##          ...
+##          10번째 줄입니다.
 
 
+# 3.4 read() 함수 이용하기
+
+f = open("새파일.txt", 'r',encoding="UTF-8")
+data = f.read()
+print(data)
+f.close()
+## Result : 1번째 줄입니다.
+##          2번째 줄입니다.
+##          ...
+##          10번째 줄입니다.
+
+f = open("새파일.txt", 'a', encoding="UTF-8")
+
+for i in range(11,20):
+    data = "%d번째 줄입니다.\n" % i
+    f.write(data)
+f.close()
+# a함수는 add의 개념으로 새파일.txt에 10번째 줄입니다. 뒤에
+# 11번째 줄입니다. 부터 19번째 줄입니다 까지 삽입을 하였다.
+
+# 3.5 with문과 함께 사용하기
+
+with open("foo.txt", "w") as f:
+    f.write("Life is too short, you need python")
+# foo.txt 파일에 Life is too short, you need python 문장이 들어가고 f함수가 자동으로 close 되었다.
