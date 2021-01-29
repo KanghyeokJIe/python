@@ -7,9 +7,8 @@ def is_odd(number):
     else:
         return False
 
-print(is_odd(3))
-## Result : True / 2로 나눈 값이 1일 경우 True를 리턴 하였고, 아닌경우 False를 리턴 하였다.
-
+print(is_odd(3))            ## Result : True
+# 2로 나눈 값이 1일 경우 True를 리턴 하였고, 아닌경우 False를 리턴 하였다.
 
 # Q2 입력으로 들어오는 모든 수의 평균 값을 계산해 주는 함수를 작성해보자.
 # (단 입력으로 들어오는 수의 개수는 정해져 있지 않다.)
@@ -20,10 +19,9 @@ def average(*args):     # 입력 개수에 상관없이 사용하려면 *args를
     for i in args:
         result += i
     return result / len(args)
-print(average(1,2,3))
-## Result : 2.0 / 입력값을 += 할당 연산자를 통해 result에 값을 넣고
+print(average(1,2,3))           ## Result : 2.0
+# 입력값을 += 할당 연산자를 통해 result에 값을 넣고
 # len 함수를 이용하여 평균 값을 구했다.
-
 
 # Q3 다음은 두 개의 숫자를 입력받아 더하여 돌려주는 프로그램이다.
 # input1 = input("첫번째 숫자를 입력하세요:")

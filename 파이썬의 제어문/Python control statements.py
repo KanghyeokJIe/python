@@ -1,5 +1,5 @@
 ## 파이썬의 제어문
-# 1. 조건문(if문) 의 기본 구조
+# 조건문(if문) 의 기본 구조
 
 moeny = True
 
@@ -9,13 +9,13 @@ else:
     print("걸어 가라")
 ## Result : 택시를 타고 가라 / if조건문 뒤에 수행할 문장과 else 뒤에 수행할 문장을 통해 조건에 따라 값이 다르게 출력됨.
 
-# 1.1 들여쓰기 오류
+# 들여쓰기 오류
 
 moeny = True
 
 if moeny:
     print("택시를 타고 가라")
-#print("aa")
+#print("aa")    # 들여쓰기를 하지 않았다.
 else:
     print("걸어 가라")
 ## Result : SyntaxError: invalid syntax / 문법이 잘못 되었다고 오류가 남.
@@ -64,7 +64,7 @@ else:
     print("걸어가라")
 ## Result : 택시를 타고 가라 / or 연산자를 통해 money는 False 이지만 card는 True이기 때문에 택시를 타고 가라가 출력됨.
 
-# 1.2 x in s, x not in s
+# x in s, x not in s
 
 if 1 in [1,2,3]:
     print("Hello World!")
@@ -78,7 +78,7 @@ else:
     print("Good bye")
 ## Result : Good bye / 리스트 안에 1이 없는지 확인 후 Good bye 가 출력되었다.
 
-# 1.3 조건문에서 아무 일도 하지 않게 설정하고 싶다면?
+# 조건문에서 아무 일도 하지 않게 설정하고 싶다면?
 
 pocket = ['paper','money','cellphone']
 
@@ -88,7 +88,7 @@ else:
     print("카드를 꺼내라")
 ## Result : / pocket 리스트 안에 money 가 있기에 pass 하여 아무런 값도 출력 되지 않는다.
 
-# 1.4 다중 조건 판단 (elif)
+# 다중 조건 판단 (elif)
 
 pocket = ['paper','cellphone']
 card = True
@@ -101,7 +101,7 @@ else:
     print("걸어가라")
 ## Result : 택시를 타고가라 / pocket 안에 money 는 없지만 다중 조건문 elif를 통해 card는 있기 때문에 택시를 타고 가라가 출력되었다.
 
-# 1.5 조건부 표현식
+# 조건부 표현식
 
 score = 70
 message = "success" if score >= 60 else "failure"

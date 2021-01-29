@@ -27,11 +27,9 @@ while i <= 1000:
         num += i
     i += 1
 
-print(num)
-## Result : 166833 / 3의 배수는 3으로 나누어 떨어지는 수이다.
+print(num)          ## Result : 166833
+# 3의 배수는 3으로 나누어 떨어지는 수이다.
 # % 연산자를 사용하여 3으로 나누어 떨어지는 수를 구할 수 있다.
-
-
 
 # Q3 while문을 사용하여 다음과 같이 별(*)을 표시하는 프로그램을 작성해 보자.
 # *
@@ -74,10 +72,7 @@ for score in A:
     total += score          # A학급의 점수를 모두 더한다.
 
 average = total / len(A)    # 평균을 구하기 위해 총 점수를 총 학생수로 나눈다
-print(average)
-## Result : 79.0
-
-
+print(average)          ## Result : 79.0
 
 # Q6 리스트 중에서 홀수에만 2를 곱하여 저장하는 다음 코드가 있다.
 
@@ -90,5 +85,4 @@ for n in numbers:
 
 numbers = [1,2,3,4,5]
 result = [n*2 for n in numbers if n%2==1]
-print(result)
-## Result : [2, 6, 10]
+print(result)           ## Result : [2, 6, 10]

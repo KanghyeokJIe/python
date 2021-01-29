@@ -46,8 +46,9 @@ class SafeFourCal(FourCal):
             return self.first / self.second
 
 a = SafeFourCal(4,0)
-print(a.div())          ## Result : 0 원래는 에러가 나야 하지만 자식클래스의 함수가 부모클래스의 함수를 덮어
-                        # 에러가 나지 않고 0으로 출력이 되었다.
+print(a.div())
+## Result : 0 원래는 에러가 나야 하지만 자식클래스의 함수가 부모클래스의 함수를 덮어
+# 에러가 나지 않고 0으로 출력이 되었다.
 
 ## 클래스 변수, 객체 변수
 # 공통으로 사용 할 때는 클래스 변수를 사용하고, 각각 객체마다 다르게 지정 할 경우 객체 변수를 사용한다.
@@ -56,6 +57,7 @@ class Family:
     lastname = "김"          # 클래스 변수에 "김" 이라고 지정하였다.
 
 Family.lastname = "박"       # 클래스 변수를 "박"으로 바꾸었기 때문에 모든 lastname값이 박으로 출력 되었다.
+
 print(Family.lastname)      ## Result : 박
 
 a = Family()
@@ -63,4 +65,3 @@ b = Family()
 
 print(a.lastname)           ## Result : 박
 print(a.lastname)           ## Result : 박
-
