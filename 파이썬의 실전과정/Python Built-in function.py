@@ -103,3 +103,67 @@ g = [1,2,3]
 h = list(g)
 
 print(g)            ## Result : [1, 2, 3]
+
+# map / 각 요소가 수행한 결과를 돌려줌
+
+def two_times(x): return x*2
+
+i = list(map(two_times,[1,2,3,4]))
+
+print(i)            ## Result : [2, 4, 6, 8]
+
+j = list(map(lambda a: a*2, [1,2,3,4])) # 보통 lambda 함수로 표기함
+
+print(j)            ## Result : [2, 4, 6, 8]
+
+# max,min / 최대,최소 값
+
+print(max([1,2,3]))             ## Result : 3
+print(max("python"))            ## Result : y
+print(min([1,2,3]))             ## Result : 1
+print(min("python"))            ## Result : h
+
+# pow / 제곱한 결과값 반환
+
+print(pow(2,4))         ## Result : 16
+print(pow(3,3))         ## Result : 27
+
+# range / 범위
+
+print(list(range(5)))           ## Result : [0, 1, 2, 3, 4]
+print(list(range(5,10)))        ## Result : [5, 6, 7, 8, 9]
+print(list(range(1,10,2)))      ## Result : [1, 3, 5, 7, 9]
+print(list(range(0,-10,-1)))    ## Result : [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+
+# round / 반올림
+
+print(round(4.6))           ## Result : 5
+print(round(4.2))           ## Result : 4
+
+# sorted / 정렬
+
+print(sorted([3,1,2]))          ## Result : [1, 2, 3]
+print(sorted(['a','c','b']))    ## Result : ['a', 'b', 'c']
+print(sorted("zero"))           ## Result : ['e', 'o', 'r', 'z']
+print(sorted((3,2,1)))          ## Result : [1, 2, 3]
+
+# str / 문자열 변환
+
+print(str(3))               ## Result : 3
+print(str('hi'))            ## Result : hi
+print(str('hi'.upper()))    ## Result : HI
+
+# tuple / 튜플 반환
+
+print(tuple("abc"))         ## Result : ('a', 'b', 'c')
+print(tuple([1,2,3]))       ## Result : (1, 2, 3)
+
+# type / 타입을 출력
+
+print(type("abc"))          ## Result : <class 'str'>
+print(type([]))             ## Result : <class 'list'>
+
+# zip / 자료형을 묶어주는 역할
+
+print(list(zip([1,2,3],[4,5,6])))           ## Result : [(1, 4), (2, 5), (3, 6)]
+print(list(zip("abc","def")))               ## Result : [('a', 'd'), ('b', 'e'), ('c', 'f')]
