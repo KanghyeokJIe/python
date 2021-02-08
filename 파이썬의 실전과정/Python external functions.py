@@ -4,6 +4,19 @@
 # sys.argv
 
 # argv_test.py
-
 import sys
 print(sys.argv)
+
+# pickle
+
+import pickle
+f = open("test.txt",'wb')
+data = {1: 'python', 2: 'you need'}
+pickle.dump(data, f)
+f.close()
+
+import pickle
+f = open("test.txt",'rb')
+data = pickle.load(f)
+print(data)
+{2:'you need', 1:'python'}
