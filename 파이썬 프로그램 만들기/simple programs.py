@@ -18,7 +18,7 @@ def GuGu(n):
         i = i + 1 
     return result
 
-print(GuGu(2))
+print(GuGu(2))      ## Result : [2, 4, 6, 8, 10, 12, 14, 16, 18]
 
 # 3과 5의 배수 합하기
 # 10미만의 자연수에서 3과 5의 배수를 구하면 3,5,6,9이다.
@@ -35,7 +35,8 @@ for n in range(1,1000):
     if n % 3 == 0 or n % 5 == 0:
      # 3,5로 나눈 나머지가 0이면 3,5의 배수 이다.
         result += n
-print(result)
+
+print(result)       ## Result : 233168
 
 
 
