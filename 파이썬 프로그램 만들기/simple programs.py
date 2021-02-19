@@ -38,5 +38,29 @@ for n in range(1,1000):
 
 print(result)       ## Result : 233168
 
+# 게시판 페이징 하기
+# 게시물의 총 건수와 한 페이지에 보여줄 게시물 수를 입력으로 주었을 때 총 페이지수를 출력하는 프로그램
 
+# 입력과 출력 관점
+# 1. 함수의 이름은? GetTotalPage
+# 2. 입력받는 값은? 게시물의 총 건수(m), 한 페이지에 보여 줄 게시물 수 (n)
+# 3. 출력하는 값은? 총 페이지 수
 
+def GetTotalPage(m,n):
+    if m % n == 0:
+        return m // n
+    else:
+        return m // n + 1
+
+print(GetTotalPage(5,10))       ## Result : 1
+print(GetTotalPage(15,10))      ## Result : 2
+print(GetTotalPage(25,10))      ## Result : 3
+print(GetTotalPage(30,10))      ## Result : 3
+
+# 간단한 메모장 만들기
+# 원하는 메모를 파일에 저장하고 추가 및 조회가 가능한 간단한 메모장을 만들어 보자.
+
+# 입력과 출력 관점
+# 1. 필요한 기능은? 메모 추가하기,조회하기
+# 2. 입력 받는 값은? 메모 내용, 프로그램 실행 옵션
+# 3. 출력하는 값은? memo.txt
