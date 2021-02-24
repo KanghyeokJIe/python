@@ -84,3 +84,56 @@ m = p.search("3 python")
 # match와 달리 일치하는 구문이 존재하면 match 객체를 리턴해줌
 
 print(m)        ## Result : <re.Match object; span=(2, 8), match='python'>
+
+# findalll,finditer
+
+import re
+
+p = re.compile('[a-z]+')
+m = p.findall('life is too short')
+# findall은 일치하는 것을 찾아 리스트로 리턴해줌.
+
+print(m)        ## Result : ['life', 'is', 'too', 'short']
+# 일치하는 str을 리스트에 담아서 출력하였다.
+
+p = re.compile('[a-z]+')
+m = p.finditer('life is too short')
+# finditer는 match 되는 문자열을 다 match 객체 형태로 반복 가능한 객체 하나로 리턴함
+
+print(m)        ## Result : <callable_iterator object at 0x10b7e3b50>
+# 반복 가능한 객체 하나로 리턴함
+
+for r in m:
+    print(r)
+# <re.Match object; span=(0, 4), match='life'>
+# <re.Match object; span=(5, 7), match='is'>
+# <re.Match object; span=(8, 11), match='too'>
+# <re.Match object; span=(12, 17), match='short'> 
+
+# match 객체의 메서드1
+# method            목적
+# group()       매치된 문자열을 리턴한다.
+# start()       매치된 문자열의 시작 위치를 리턴한다.
+# end()         매치된 문자열의 끝 위치를 리턴한다.
+# span()        매치된 문자열의 (시작, 끝)에 해당되는 튜플을 리턴한다.
+
+import re
+
+p = re.compile('[a-z]+')
+m = p.match('python')
+
+print(m.group())        ## Result : python
+print(m.start())        ## Result : 0
+print(m.end())          ## Result : 6
+print(m.span())         ## Result : (0,6)
+
+# 컴파일 옵션 / DOTALL, S
+
+import re
+
+p = re.compile('a.b', re.DOTALL)
+# DOTALL은 줄바꿈 문자를 포함하도록 만드는 옵션 약어인 S를 사용하여도 된다.
+m = p.match('a\nb')
+
+print(m)        ## Result : <re.Match object; span=(0, 3), match='a\nb'>
+
