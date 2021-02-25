@@ -137,3 +137,77 @@ m = p.match('a\nb')
 
 print(m)        ## Result : <re.Match object; span=(0, 3), match='a\nb'>
 
+# IGNORECASE, I
+
+import re
+
+p = re.compile('[a-z]', re.I)
+# 대소문자를 무시하고 매칭 시켜주는 옵션
+
+print(p.match('python'))        ## Result : <re.Match object; span=(0, 1), match='p'>
+print(p.match('Python'))        ## Result : <re.Match object; span=(0, 1), match='P'>
+print(p.match('PYTHON'))        ## Result : <re.Match object; span=(0, 1), match='P'>
+
+# MULTILINE, M
+
+import re
+
+p = re.compile("^python\s\w+", re.M)
+# ^는 맨처음, \s는 공백을 \w 는 알파벳, 숫자, _ 를 나타내는 문자이다.
+# MULTILINE은 ^를 맨처음이 아닌 각 라인의 처음으로 인식 시키는 옵션
+
+data = """python one
+life is too short
+python two
+you need python
+python three"""
+
+print(p.findall(data))      ## Result : ['python one', 'python two', 'python three']
+
+# VERBOSE, X
+
+import re
+
+charref = re.compile(r'&[#](0[0-7]+|[0-9]+|x[0-9a-fA-F]+);')
+
+charref = re.compile(r"""
+ &[#]                # Start of a numeric entity reference
+ (
+     0[0-7]+         # Octal form
+   | [0-9]+          # Decimal form
+   | x[0-9a-fA-F]+   # Hexadecimal form
+ )
+ ;                   # Trailing semicolon
+""", re.VERBOSE)
+# 긴 정규 표현식을 줄바꿈으로 나누어도 컴파일 되게 만들어 주는 옵션
+
+# 백슬래시 문제 
+
+# \section
+# p = re.compile('\\section')   \ 가 2개 붙은 표현식을 매칭하려면
+# p = re.compile('\\\\section') \ 를 이처럼 4개 사용해야 하게된다.
+# p = re.compile(r'\\section') 따라서 백슬래시가 있는 어떤 표현식이 있을 때 
+# r을 붙여서 로우스트링으로 백슬래시 두개를 붙여서 표현해주면 정상 작동하게 된다.
+
+# 강력한 정규 표현식의 세계로
+# 메타문자 |
+
+import re
+
+p = re.compile('Crow|Servo')
+# |는 or 과 같은 뜻이다.
+m = p.match('CrowHello')
+
+print(m)        ## Result : <re.Match object; span=(0, 4), match='Crow'>
+# Crow 가 겹치기 때문에 매칭 된 값을 리턴 해준다.
+
+# 메타문자 ^
+
+import re
+# re 모듈에서 바로 search를 주고 컴파일할 정규표현식(^Life)을 써주고 찾을 문자열(Life is too short) 입력해주면 한줄에 표현 가능하다.
+
+print(re.search('^Life', 'Life is too short'))      ## Result : <re.Match object; span=(0, 4), match='Life'> 
+# 맨처음을 나타내는 ^가 있어 Life 가 맨 처음 있기 때문에 결과 값이 출력되었다.
+
+print(re.search('^Life', 'My Life'))        ## Result : None
+# My Life는 My가 맨 처음 나왔기 때문에 일치 조건에 일치 하지 않아 None 이 출력되었다.
