@@ -211,3 +211,59 @@ print(re.search('^Life', 'Life is too short'))      ## Result : <re.Match object
 
 print(re.search('^Life', 'My Life'))        ## Result : None
 # My Life는 My가 맨 처음 나왔기 때문에 일치 조건에 일치 하지 않아 None 이 출력되었다.
+
+# 메타문자 $ 
+
+import re
+
+print(re.search('short$','Life is too short'))      ## Result : <re.Match object; span=(12, 17), match='short'>
+# 맨끝을 나타내는 $가 있어 맨끝에 short가 있어 결과 값이 출력되었다.
+
+print(re.search('short$','Life is too short, you need python'))     ## Result : None
+# 맨끝을 나타내는 $가 있으나 맨끝에 python이 있어 결과 None 이 출력 되었다.
+
+# 메타문자 \b
+
+import re
+
+p = re.compile(r'\bclass\b')
+# \b는 공백을 나타내는 메타 문자다.
+
+print(p.search('no class at all'))      ## Result : <re.Match object; span=(3, 8), match='class'>
+# 공백을 나타내는 \b가 있어 class 양쪽에 공백이 있는 결과값이 출력되었다.
+
+print(p.search('the declassified algorithm'))     ## Result : None
+# 공백을 나타내는 \b가 있지만 class 양쪽에 공백이 없어 None이 출력되었다.
+
+print(p.search('one subclass is'))      ## Result : None
+# 공백을 나타내는 \b가 있지만 class 양쪽에 공백이 없어 None이 출력되었다.
+
+# 그룹핑 ()
+
+import re
+
+p = re.compile('(ABC)+')
+# 반복되는 문자열(ABC)을 검색하기 위해 그룹핑으로 묶어 주게 되면 반복 되는 문자열을 검색하기 용이하다.
+m = p.search('ABCABCABC OK?')
+
+print(m)    ## Result : <re.Match object; span=(0, 9), match='ABCABCABC'>
+
+print(m.group())    ## Result : ABCABCABC
+
+p = re.compile(r"(\w+)\s+\d+[-]\d+[-]\d+")
+m = p.search("park 010-1234-1234")
+
+print(m.group(1))   ## Result : park
+# 그룹핑된 첫 번째 그룹을 따로 불러올수 있다.
+
+p = re.compile(r'(\b\w+)\s+\1')
+# \1은 정규표현식 내부에서 그룹의 결과를 사용 할 수 있다.
+print(p.search('Paris in the the spring '))   ## Result : the the
+
+# 그룹핑된 문자열에 이름 붙이기 ?P<name>
+
+p = re.compile(r"(?P<name>\w+)\s+((\d+)[-]\d+[-]\d+)")
+# ?P<name>으로 그룹에 이름을 붙여 쓸 수 있다.
+m = p.search("park 010-1234-1234")
+
+print(m.group("name"))    ## Result : park 
