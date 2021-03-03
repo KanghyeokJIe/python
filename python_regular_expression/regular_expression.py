@@ -267,3 +267,20 @@ p = re.compile(r"(?P<name>\w+)\s+((\d+)[-]\d+[-]\d+)")
 m = p.search("park 010-1234-1234")
 
 print(m.group("name"))    ## Result : park 
+
+import re
+
+p = re.compile(r'(?P<word>\b\w+)\s+(?P=word)')
+
+print(p.search('Paris in the the spring').group())    ## Result : the the
+
+# 전방탐색: 긍정형 (?=)
+
+import re
+
+p = re.compile(".+(?=:)")
+# :까지의 검색 결과를 도출 하고 싶으나 결과에는 포함 하고 싶지 않을 경우 (?=)을 사용한다.
+
+m = p.search("http://google.com")
+
+print(m.group())    ## Result : http
