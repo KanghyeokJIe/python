@@ -110,4 +110,17 @@ if ((num%4)==0 and (num%100)!=0 or (num%400)==0):
     print('1')
 else:
     print('0')
-    
+
+# 백준 14681번 
+
+x = int(input())
+y = int(input())
+
+if (x >= 1 and y >= 1):
+    print('1')
+elif (x <= -1 and y >= 1):
+    print('2')
+elif (x <= -1 and y <= -1):
+    print('3')
+else:
+    print('4')
